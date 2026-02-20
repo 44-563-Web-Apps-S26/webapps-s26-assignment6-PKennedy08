@@ -13,31 +13,34 @@
 <h2>Getting input</h2>
 
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <label for="secretvillain">Funny Man</label>
+    <input type ="password" id="secretvillain" name="Joker" min=10 max=50 step=2 value=30> <br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="guessvillain">guess the villain </label>
+    <input type ="text" id="guessvillain" > <br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <input type="button" onclick="checkVillain()" value="check the guess">
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result">caught: 0| gotAway: 0 </p>
 
 <script> 
+caught = 0;
+gotAway = 0;
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
+function checkVillain (){
+    console.log("checking guess")
+    secret = document.getElementById("secretvillain").value
+    guess = document.getElementById("guessvillain").value
     
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
+
+    if(secret == guess){
+        caught++;
+        alert("You caught them")
     } else {
-        out.innerHTML = "Values were not confirmed"
+        gotAway++;
+        alert("maybe next time")
     }
 }
 </script>
