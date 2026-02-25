@@ -45,12 +45,38 @@ function checkVillain (){
 }
 </script>
 
+<br>
+
 <div>
-    <img src="https://www.tannins.org/wp-content/uploads/2019/05/quercia-tannino.jpg" width="150" height="150" class="img-fluid" alt="Druid Oak Tree">
+    <img src="https://www.tannins.org/wp-content/uploads/2019/05/quercia-tannino.jpg" width="150" height="150" class="img-fluid" alt="Druid Oak Tree" onclick="UpdatePicture()">
     
 
-  </div>
-<img src="https://i0.wp.com/thehorticult.com/wp-content/uploads/2014/03/Bloom-Alert-Coral-Tree-ryanbenoitphoto-thehorticult-RMB_88852.jpg?w=650&ssl=1" width="400" height="500" class="img-fluid" alt="Kaffirboom tree">
-    <img src="https://www.monumentaltrees.com/db/61/600/61952.jpg" width="400" height="500" alt="Enebro tree">
+</div>
+<script>
+    let usepic = 1;
+
+    function updatePicture(){
+        let image = getElementById("TreeImage")
+
+        switch(usepic){
+            case 1:
+                image.src = "https://www.tannins.org/wp-content/uploads/2019/05/quercia-tannino.jpg";
+                usepic = 2;
+                break;
+
+            case 2:
+                image.src = "https://i0.wp.com/thehorticult.com/wp-content/uploads/2014/03/Bloom-Alert-Coral-Tree-ryanbenoitphoto-thehorticult-RMB_88852.jpg?w=650&ssl=1";
+                usepic = 3;
+                break;
+            case 3:
+                image.src = "https://www.monumentaltrees.com/db/61/600/61952.jpg";
+                usepic = 1;
+                break;
+        }
+
+    }
+</script>
+
+
 </body>
 </html> 
