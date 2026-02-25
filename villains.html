@@ -48,15 +48,14 @@ function checkVillain (){
 <br>
 
 <div>
-    <img src="https://www.tannins.org/wp-content/uploads/2019/05/quercia-tannino.jpg" width="150" height="150" class="img-fluid" alt="Druid Oak Tree" onclick="UpdatePicture()">
+    <img id="TreeImage" src="https://www.tannins.org/wp-content/uploads/2019/05/quercia-tannino.jpg" width="150" height="150" class="img-fluid" alt="Druid Oak Tree" onclick="UpdatePicture()">
     
-
 </div>
 <script>
     let usepic = 1;
 
-    function updatePicture(){
-        let image = getElementById("TreeImage")
+    function UpdatePicture(){
+        let image = document.getElementById("TreeImage")
 
         switch(usepic){
             case 1:
