@@ -27,13 +27,13 @@
 
 <p id="result">taxes </p>
 <form>
-    <input type="radio" name="operation" value="exponent" onclick="chooseOp">
+    <input type="radio" name="operation" value="exponent" onclick="chooseOp()">
     <label>power</label> <br>
 
-    <input type="radio" name="operation" value="add" onclick="chooseOp">
+    <input type="radio" name="operation" value="add" onclick="chooseOp()">
     <label>sum</label> <br>
 
-    <input type="radio" name="operation" value="mod" onclick="chooseOp">
+    <input type="radio" name="operation" value="mod" onclick="chooseOp()">
     <label>mod</label> <br>
 
 </form>
@@ -67,10 +67,10 @@ function doTax(){
 function chooseOp(){
     let income = Number(document.getElementById("income").value)
     let baseRate = Number(document.getElementById("baseRate").value)
-    let radios = document.getElementById("operation")
+    let radios = document.getElementByName("operation")
 
     let resultText = "";
-    for(let i = 0; i < radios.length; i){
+    for(let i = 0; i < radios.length; i++){
         if(radios[i].checked){
             if(radios[i].value === "exponent"){
                 let value = income ** baseRate;
@@ -82,7 +82,7 @@ function chooseOp(){
             }
         }
     }
-document.getElementById("opResult").innerHTML = resultText;
+document.getElementById("Result").innerHTML = resultText;
 
 }
 
