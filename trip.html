@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>trip file</title>
+    <h2>parker Kennedy travel planner</h2>
+ </head>
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="caribbean">Caribbean </label>
+    <input type="checkbox" id="caribbean" value="True"> <br>
+
+    <label for="mediterranean">Mediteranean </label>
+    <input type="checkbox" id="mediterranean" value="True"> <br>
+
+    <label for="baltic">Baltic </label>
+    <input type="checkbox" id="baltic" value="False"> <br>
+    <input type="button" onclick="choices()" value="Cruise Choices">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+
+function choices (){
+    my_trip = {};
+
+    my_trip.caribbean = document.getElementById("caribbean").checked;
+    my_trip.mediterranian = document.getElementById("mediterranian").checked;
+    my_trip.baltic = document.getElementById("baltic").checked;
+
+document.getElementById("result").innerHTML = JSON.stringify(my_trip);
+}
+</script>
+
+</body>
+</html> 
